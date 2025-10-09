@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr" x-data="theme_blog()" :data-theme="theme">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accueil - Mon Blog</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<script>
+  (function() { // application du theme dès le chargementde la page donc avant AlpineJS pour ne pas que l'on voit le chargement de couleur pendant un cour instant du a la transition
+    const theme = localStorage.getItem('theme') || 
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+<body>
+  <header>
+    <h1>Mon Blog</h1>
+    <nav>
+      <a href="index.html" class="active">Accueil</a>
+      <a href="contact.html">Contact</a>
+      <button class="theme-toggle" :aria-pressed="theme==='dark'" @click="switchTheme()" x-text="theme==='dark' ? '☾' : '☼'"></button>
+    </nav>
+  </header>
+  <main>
+    <h2>Liste des articles</h2>
+    <section class="articles-grid">
+      <article>
+        <h3><a href="article1.html">911 GT3 RS</a></h3>
+        <p>Description de la voiture</p>
+      </article>
+      <article>
+        <h3><a href="article2.html">HURACAN STERRATO</a></h3>
+        <p>Description de la voiture</p>
+      </article>
+      <article>
+        <h3><a href="article3.html">FERRARI 488 PISTA</a></h3>
+        <p>Description de la voiture</p>
+      </article>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 Mon Blog | Tous droits réservés</p>
+  </footer>
+</body>
+</html>

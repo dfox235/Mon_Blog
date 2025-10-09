@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr" x-data="theme_blog()" :data-theme="theme">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>911 GT3 RS - Mon Blog</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<script>
+  (function() {  // application du theme dès le chargementde la page donc avant AlpineJS pour ne pas que l'on voit le chargement de couleur pendant un cour instant du a la transition
+    const theme = localStorage.getItem('theme') || 
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+<body>
+  <header>
+    <h1>Mon Blog</h1>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="contact.html">Contact</a>
+      <button class="theme-toggle" :aria-pressed="theme==='dark'" @click="switchTheme()" x-text="theme==='dark' ? '☾' : '☼'"></button>
+    </nav>
+  </header>
+  <main class="article-content">
+    <h3 class="center">Résumé : </h3>
+    <p>La Porsche 911 GT3 RS, est une automobile de compétition développée par le constructeur 
+      allemand Porsche pour courir dans la catégorie GT2, de l'Automobile Club de l'Ouest et de 
+      la fédération Internationale de l'Automobile. Elle est dérivée de la Porsche 911 GT3 dont 
+      elle tire son nom. Elle est dotée d'un moteur 6 cylindres à plat, d'une cylindrée de 
+      3 598 cm3[1],[2], développant une puissance maximale de l'ordre de 42 </p>
+    <p class="date"> <strong>Date de publication :</strong> 8 octobre 2025</p>
+    <img src="images\gt3rs.avif" alt="Image de l'article" width="90%" height="90%" style="display: block; margin-left: auto; margin-right: auto;" a>
+    <h1 class="center">911 GT3 RS</h1>
+    <p>La Porsche 911 GT3 RS est l’une des voitures de sport les plus emblématiques jamais produites par le constructeur allemand Porsche. Depuis ses débuts, elle incarne la synthèse parfaite entre performance extrême, technologie de pointe et plaisir de conduite pur. Conçue pour offrir une expérience sur route et sur circuit proche de celle des voitures de compétition, la 911 GT3 RS se distingue par ses caractéristiques techniques exceptionnelles et son design immédiatement reconnaissable.</p>
+    <h3>Un moteur et des performances à couper le souffle</h3>
+    <p>Au cœur de la GT3 RS se trouve un moteur atmosphérique 6 cylindres à plat (Flat-6) de 4,0 litres développant plus de 500 chevaux selon les versions récentes. Ce moteur, associé à une boîte Porsche PDK à double embrayage, permet des accélérations fulgurantes et des passages de rapports ultra-rapides. La voiture peut ainsi passer de 0 à 100 km/h en seulement 3,2 secondes, avec une vitesse de pointe dépassant les 310 km/h.</p>
+    <p>Mais la GT3 RS n’est pas seulement rapide en ligne droite : sa conception est entièrement orientée vers la performance dynamique. L’aérodynamique est optimisée grâce à un grand aileron arrière fixe, des diffuseurs et des prises d’air spécifiques qui augmentent l’appui au sol, améliorant la stabilité dans les virages rapides. Les suspensions et les freins sont directement inspirés de la compétition, offrant un contrôle précis et une sensation de conduite exceptionnelle.</p>
+    <h3>Un design sportif et fonctionnel</h3>
+    <p>Le design de la GT3 RS ne se limite pas à l’esthétique : chaque élément est pensé pour la performance. La carrosserie allégée, avec des composants en carbone et aluminium, réduit le poids total, tout en améliorant la rigidité structurelle. Les roues larges et les pneus haute performance garantissent une adhérence optimale, même lors de conduite intensive sur circuit. À l’intérieur, l’habitacle combine confort minimaliste et ergonomie sportive, avec des sièges baquets, un volant type course et des commandes orientées vers le conducteur.</p>
+    <h3>Une expérience unique pour les passionnés</h3>
+    <p>La 911 GT3 RS offre une expérience de conduite inégalée grâce à son moteur atmosphérique, de plus en plus rare dans un monde où les moteurs turbo et hybrides dominent. Son son unique, rauque et puissant, résonne comme une promesse de sensations fortes dès que le moteur prend des tours. Chaque virage devient un défi maîtrisé, chaque ligne droite une opportunité d’exploiter la puissance brute du moteur.</p>
+    <p>En résumé, la Porsche 911 GT3 RS est bien plus qu’une simple voiture de sport : c’est une icône de l’ingénierie automobile, conçue pour les passionnés qui recherchent la performance ultime sur route et circuit. Entre technologie de pointe, design aérodynamique et plaisir de conduite pur, la GT3 RS reste une référence incontournable dans l’univers des supercars et des voitures de piste homologuées pour la route.</p>
+    <a href="https://www.porsche.com/france/models/911/911-gt3-rs/911-gt3-rs/">Pour plus d'informations</a>
+  </main>
+  <footer>
+    <p>© 2025 Mon Blog | Tous droits réservés</p>
+  </footer>
+</body>
+</html>
