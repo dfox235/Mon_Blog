@@ -56,10 +56,9 @@ function theme_blog() {
   return {
     theme: getSavedTheme(),
 
-    init() {
-      setTheme(this.theme);
-    },
-
+    //init() {
+    //  setTheme(this.theme);
+    //},
     switchTheme() {
       this.theme = this.theme === 'dark' ? 'light' : 'dark';
       setTheme(this.theme);
@@ -67,6 +66,7 @@ function theme_blog() {
     }
   };
 }
+
 
 
 
