@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr" x-data="theme_blog()" x-init="init()" :data-theme="theme">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HURACAN STERRATO - Mon Blog</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<script>
+  (function() { // application du theme dès le chargementde la page donc avant AlpineJS pour ne pas que l'on voit le chargement de couleur pendant un cour instant du a la transition
+    const theme = localStorage.getItem('theme') || 
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+<body>
+  <header>
+    <h1>Mon Blog</h1>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="contact.html">Contact</a>
+      <button class="theme-toggle" :aria-pressed="theme==='dark'" @click="switchTheme()" x-text="theme==='dark' ? '☾' : '☼'"></button>
+    </nav>
+  </header>
+  <main class="article-content">
+    <h3 class="center">Résumé : </h3>
+    <p>La Huracán Sterrato ouvre une nouvelle frontière du plaisir de conduire. Il s’agit de 
+      la première supersportive conçue pour oser même lorsque l’asphalte prend fin. Équipée 
+      d’une version dédiée du système Lamborghini Dinamica Veicolo Integrata (LDVI), avec des 
+      calibrages spécifiques pour les modes Strada et Sport, elle introduit le mode Rally. Telle 
+      une œuvre d’art avant-gardiste, elle représente l’innovation : une interprétation inédite 
+      du concept de supersportive.</p>
+      <p class="date"> <strong>Date de publication :</strong> 8 octobre 2025</p>
+      <img src="images/huracan_sterrato.png" alt="Image de l’article" width="70%" height="70%" style="display: block; margin-left: auto; margin-right: auto;">
+    <h1 class="center">HURACAN STERRATO</h1>
+    <p>La Lamborghini Huracán Sterrato est une version inédite et audacieuse de la célèbre Huracán, pensée pour combiner la performance légendaire de Lamborghini avec des capacités tout-terrain. Cette supercar unique en son genre repousse les limites de l’ingénierie automobile en offrant la puissance et le design emblématiques de la marque italienne tout en permettant de rouler sur des routes plus accidentées ou même des sentiers légers.</p>
+    <h3>Un moteur puissant et polyvalent</h3>
+    <p>La Huracán Sterrato conserve le moteur V10 atmosphérique de 5,2 litres, développant environ 640 chevaux selon la version. La puissance est transmise aux quatre roues via le système de traction intégrale emblématique de Lamborghini et une boîte de vitesses à double embrayage. Cela permet des accélérations fulgurantes, avec un 0 à 100 km/h en environ 3,6 secondes, tout en conservant une maniabilité et un contrôle optimaux même sur des surfaces moins adhérentes.</p>
+    <p>Pour s’adapter au tout-terrain léger, la suspension a été relevée et renforcée, avec une garde au sol accrue et des amortisseurs ajustés pour absorber les chocs. Les jantes sont équipées de pneus spéciaux offrant une meilleure adhérence sur gravier ou terre, tout en conservant la sportivité et l’agilité typiques des modèles Huracán.</p>
+    <h3>Un design agressif et fonctionnel</h3>
+    <p>La Lamborghini Huracán Sterrato se distingue par un look résolument audacieux : des protections supplémentaires sur les bas de caisse et les passages de roues, un aileron arrière légèrement surélevé pour une meilleure stabilité, et une calandre avant retravaillée pour protéger le moteur et le système de refroidissement. Les matériaux légers et résistants utilisés permettent de garder un poids maîtrisé tout en renforçant la durabilité de la voiture.</p>
+    <h3>Une expérience unique pour les amateurs de sensations fortes</h3>
+    <p>Rouler avec la Huracán Sterrato, c’est profiter d’une supercar de route dans un contexte plus aventureux. Le conducteur bénéficie du son envoûtant du V10, de la précision des systèmes électroniques de contrôle et d’une position de conduite qui inspire confiance même sur les chemins accidentés. Chaque virage et chaque dénivelé deviennent une opportunité de ressentir le dynamisme et la puissance de cette supercar hors norme.</p>
+    <p>En résumé, la Lamborghini Huracán Sterrato est une fusion parfaite entre performance sportive et capacités tout-terrain. Elle démontre que Lamborghini peut allier audace, innovation et plaisir de conduite, tout en offrant une expérience unique aux passionnés d’automobile qui recherchent l’excitation et la polyvalence sur la route et en dehors.</p>   
+    <a href="https://www.lamborghini.com/fr-en/mod%C3%A8les/huracan/huracan-sterrato#val-ht">Pour plus d'informations</a>
+  </main>
+  <footer>
+    <p>© 2025 Mon Blog | Tous droits réservés</p>
+  </footer>
+</body>
+</html>

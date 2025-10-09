@@ -1,0 +1,149 @@
+/*Variables de couleurs pour thème clair*/
+:root {
+  --bg: white;
+  --text: black;
+  --header: rgb(219, 219, 219); 
+}
+
+/*Variables pour thème sombre*/
+html[data-theme="dark"] {
+  --bg: rgb(32, 31, 31);
+  --text: white;
+  --header: #333;
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif; /* Police principale */
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+
+header {
+  background-color: var(--header);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem;
+}
+
+nav a {
+  margin-right: auto;
+  text-decoration: none;
+  color: var(--text);
+  border-radius: 3px;
+  padding: 0.3rem 0.3rem
+}
+
+nav a:hover{
+  background-color: rgb(199, 192, 192); 
+}
+
+nav a.active {
+  font-weight: bold;
+  border-bottom: 2px solid var(--text); /* Lien actif souligné */
+}
+
+.theme-toggle {
+  border: none;
+  background: none;
+  font-size: 1.5em;
+  cursor: pointer; /* Curseur pointer pour le bouton thème */
+}
+
+main {
+  padding: 2rem;
+}
+
+.articles-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Grille responsive */
+}
+
+article {
+  background-color: var(--header);
+  padding: 8px;
+  margin: 5px;
+  border-radius: 4px;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--text);
+  text-decoration: underline;
+}
+
+footer {
+  background-color: var(--header);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Boutons généraux */
+button {
+  padding: 0.1rem 0.8rem;
+  color: var(--text);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: rgb(199, 192, 192);
+}
+
+/* Bouton type submit spécifique */
+button[type="submit"] {
+  background-color: var(--header);
+  border-radius: 5px;
+  padding: 0.7rem;
+  cursor: pointer;  
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3; 
+}
+
+/* Formulaire*/
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 2rem auto;
+  gap: 1rem;
+}
+
+input, textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Message d'erreur */
+.error { 
+  color: red; 
+  font-size: 0.9rem; 
+  margin-top: -0.75rem; 
+  margin-bottom: 0.75rem; 
+} 
+
+/* Label des champs */
+label { 
+  display: block; 
+  margin-bottom: 0.25rem; 
+  font-weight: bold; 
+} 
+
+/*Transitions pour changement de thème*/
+* {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Classe utilitaire pour centrer le texte*/ 
+.center{
+  text-align: center;
+}
